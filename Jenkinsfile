@@ -42,7 +42,7 @@ pipeline {
 		stage('Testing website') {
 			steps {
 				script{
-			 		retry(4) {
+			 		retry(8) {
 			    			sh 'curl --silent http://18.141.166.204:8080/java-web-app/ | grep -i "mahi" '
 						// echo "${test}"
 			 		}
