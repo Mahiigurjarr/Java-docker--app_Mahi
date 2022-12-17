@@ -43,7 +43,7 @@ pipeline {
 			steps {
 				script{
 			 		retry(4) {
-			    			sh 'curl --silent http://13.214.186.134:8080/java-web-app/ | grep -i mahi'
+			    			sh 'grep -i mahi | curl --silent http://18.141.166.204:8080/java-web-app/ '
 						// echo "${test}"
 			 		}
 				}    
