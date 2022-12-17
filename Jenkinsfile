@@ -32,7 +32,7 @@ pipeline {
 			}	
 
 		}
-		stage("QAT Testing") {
+		stage("QAT-Testing") {
 			steps { 
 				sh 'sudo docker run -d nginx'
 				sh 'sudo docker rm -f $(sudo docker ps -a -q)'
