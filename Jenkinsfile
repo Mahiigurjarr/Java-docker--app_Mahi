@@ -39,11 +39,11 @@ pipeline {
 				sh 'sudo docker run -dit -p 8080:8080 --name web11 mahigurjarr/pipeline-java'
 			}
 		}
-		stage('QAT testing') {
+		stage('Testing website') {
 			steps {
 				script{
 			 		retry(4) {
-			    			sh 'grep -i mahi | curl --silent http://18.141.166.204:8080/java-web-app/ '
+			    			sh 'curl --silent http://18.141.166.204:8080/java-web-app/ | grep -i "mahi" '
 						// echo "${test}"
 			 		}
 				}    
